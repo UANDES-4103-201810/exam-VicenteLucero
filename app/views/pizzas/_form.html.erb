@@ -1,0 +1,26 @@
+<%= form_with(model: @recipe_pizza, local: true) do |form| %>
+  <% if pizza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pizza.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% pizza.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   <h2><%= @recipe.name %></h2>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.submit %>
+  </div>
+
+
+
+<% end %>

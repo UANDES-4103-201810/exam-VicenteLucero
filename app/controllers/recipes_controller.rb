@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     @recipe=Recipe.new(recipe_params)
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to @recipe, notice: 'Project was successfully created.' }
+        format.html { redirect_to @recipe}
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new }
@@ -34,6 +34,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :ingredient_id, :price)
+    params.require(:recipe).permit(:name, :ingredient_id, :price, :avatar)
   end
 end
