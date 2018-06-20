@@ -1,0 +1,21 @@
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h1 align="center">Welcome to Joe's Pizza</h1>
+  </div>
+</div>
+
+<% @recipes.each  do |recipe| %>
+    <div class="col-md-3">
+      <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+        <div class="panel-body">
+
+          <p>Name: <%= recipe.name %></p>
+          <p>Price: <%= recipe.price %> </p>
+          <p><%=link_to 'ingredients', recipe_path(recipe.id)%></p>
+        </div>
+      </div>
+    </div>
+<% end %>
+<div>
+  <%= link_to 'new recipe', new_recipe_path%>
+</div>
